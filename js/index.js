@@ -39,4 +39,63 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+const nav = document.querySelector('nav');
+[...nav.children].forEach((current, index) => {
+  current.innerHTML = siteContent['nav']['nav-item-' + (index + 1)];
+});
+
+const ctaEl = document.querySelector('.cta > .cta-text');
+[...ctaEl.children].forEach((current, index) => {
+  current.innerHTML = siteContent['cta'][`${current.tagName.toLowerCase()}`];
+});
+
+let ctaImg = document.createElement('img');
+ctaImg.src = siteContent['cta']['img-src'];
+ctaEl.appendChild(ctaImg);
+
+let mcKeys = ['features', 'about', 'services', 'product', 'vision'];
+
+let mc1 = document.querySelectorAll('.text-content');
+[...mc1].forEach((current, index) => {
+  [...current.children].forEach((currentC, indexC) => {
+    if((indexC + 1) % 2) {
+      currentC.innerHTML = siteContent['main-content'][`${mcKeys[index]}-h4`];
+    }
+    else currentC.innerHTML = siteContent['main-content'][`${mcKeys[index]}-content`];
+  });
+});
+
+let mc1Img = document.getElementById('middle-img');
+mc1Img.src = siteContent['main-content']['middle-img-src'];
+
+const contactEls = document.querySelector('.contact').children;
+let contactCounter = 0;
+for(let key in siteContent['contact']) {
+  contactEls[contactCounter].innerHTML = siteContent['contact'][key];
+  contactCounter++;
+}
+
+const footerEl = document.querySelector('footer p');
+footerEl.innerHTML = siteContent['footer']['copyright'];
+
+// Task 3
+
+let child1 = document.createElement('a');
+child1.innerHTML = 'Extra 1';
+let child2 = document.createElement('a');
+child2.innerHTML = 'Extra 2';
+nav.appendChild(child1);
+nav.appendChild(child2);
+
+[...nav.children].forEach((current, index) => {
+  current.setAttribute('style', 'color: green');
+});
+
+
+
+
+
+
+
