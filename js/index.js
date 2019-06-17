@@ -51,9 +51,8 @@ const ctaEl = document.querySelector('.cta > .cta-text');
   current.innerHTML = siteContent['cta'][`${current.tagName.toLowerCase()}`];
 });
 
-let ctaImg = document.createElement('img');
+let ctaImg = document.querySelector('#cta-img');
 ctaImg.src = siteContent['cta']['img-src'];
-ctaEl.appendChild(ctaImg);
 
 let mcKeys = ['features', 'about', 'services', 'product', 'vision'];
 
