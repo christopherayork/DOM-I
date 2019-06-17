@@ -60,10 +60,7 @@ let mcKeys = ['features', 'about', 'services', 'product', 'vision'];
 let mc1 = document.querySelectorAll('.text-content');
 [...mc1].forEach((current, index) => {
   [...current.children].forEach((currentC, indexC) => {
-    if((indexC + 1) % 2) {
-      currentC.innerHTML = siteContent['main-content'][`${mcKeys[index]}-h4`];
-    }
-    else currentC.innerHTML = siteContent['main-content'][`${mcKeys[index]}-content`];
+    currentC.innerHTML = siteContent['main-content'][`${mcKeys[index]}-${(indexC + 1) % 2 ? 'h4' : 'content'}`];
   });
 });
 
