@@ -49,7 +49,9 @@ const nav = document.querySelector('nav');
 const ctaEl = document.querySelector('.cta > .cta-text');
 [...ctaEl.children].forEach((current, index) => {
   current.innerHTML = siteContent['cta'][`${current.tagName.toLowerCase()}`];
-  if(current.tagName.toLowerCase() === 'h1') current.innerHTML = 'DOM<br />IS<br />AWESOME';
+  if(current.tagName.toLowerCase() === 'h1') {
+    current.innerHTML = siteContent['cta'][`${current.tagName.toLowerCase()}`].split(' ').join('<br />');
+  }
 });
 
 let ctaImg = document.querySelector('#cta-img');
