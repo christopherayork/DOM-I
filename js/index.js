@@ -93,6 +93,15 @@ nav.appendChild(child2);
   current.setAttribute('style', 'color: green');
 });
 
+let eventButton = document.createElement('button');
+eventButton.innerHTML = 'Click Me!';
+eventButton.addEventListener('click', (event) => {
+  let aChild = document.createElement('a');
+  aChild.innerHTML = 'Events!';
+  nav.appendChild(aChild);
+});
+nav.appendChild(eventButton);
+
 
 
 
