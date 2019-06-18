@@ -88,7 +88,7 @@ child2.innerHTML = 'Extra 2';
 nav.appendChild(child1);
 nav.appendChild(child2);
 
-[...nav.children].forEach((current, index) => {
+[...nav.children].forEach((current) => {
   current.setAttribute('style', 'color: green');
 });
 
